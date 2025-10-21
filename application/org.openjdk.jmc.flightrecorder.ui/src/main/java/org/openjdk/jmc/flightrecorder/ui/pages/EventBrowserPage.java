@@ -347,7 +347,7 @@ public class EventBrowserPage extends AbstractDataPage {
 					listOrderBy = null;
 				}
 				if (!existingColumnIds.contains(combinedId)) {
-					newColumns.add(0, new ColumnSettings(combinedId, false, null, null));
+					newColumns.add(new ColumnSettings(combinedId, false, null, null));
 				}
 			});
 			// add a column for the event type id, hidden by default

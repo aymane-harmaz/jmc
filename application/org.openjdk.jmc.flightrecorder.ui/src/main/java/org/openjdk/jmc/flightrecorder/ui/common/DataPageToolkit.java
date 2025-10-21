@@ -228,8 +228,7 @@ public class DataPageToolkit {
 				.sorted((c1, c2) -> Integer.compare(DEFAULT_COLUMNS_ORDER.get(c1.getId()),
 						DEFAULT_COLUMNS_ORDER.get(c2.getId())));
 		final Stream<ColumnSettings> naturalOrderColumns = columns.stream()
-				.filter(c -> !DEFAULT_COLUMNS_ORDER.containsKey(c.getId()))
-				.sorted((c1, c2) -> String.CASE_INSENSITIVE_ORDER.compare(c1.getId(), c2.getId()));
+				.filter(c -> !DEFAULT_COLUMNS_ORDER.containsKey(c.getId()));
 		final List<ColumnSettings> resultColumns = Stream.concat(defaultOrderColumns, naturalOrderColumns)
 				.collect(Collectors.toList());
 		return new TableSettings(orderBy, resultColumns);
